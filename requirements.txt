@@ -3,4 +3,7 @@ twilio
 yt-dlp
 gunicorn
 lyricsgenius
+beautifulsoup4
+requests
+
 
