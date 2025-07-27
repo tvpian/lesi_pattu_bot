@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: whatsapp-youtube-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    plan: free
+
