@@ -2,3 +2,5 @@ flask
 twilio
 yt-dlp
 gunicorn
+lyricsgenius
+

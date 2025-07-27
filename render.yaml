@@ -1,8 +1,11 @@
 services:
   - type: web
-    name: whatsapp-youtube-bot
+    name: whatsapp-song-bot
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
     plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: _P3ZN4p35QKNLFEIAGUuDF4OtqoE5CIvlV4xEvMCq8z6mkEtthujwCs_HuKdMU_J
+        sync: false  # set manually via dashboard
 
