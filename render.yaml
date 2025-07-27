@@ -8,5 +8,5 @@ services:
     envVars:
       - key: GENIUS_ACCESS_TOKEN
         value: _P3ZN4p35QKNLFEIAGUuDF4OtqoE5CIvlV4xEvMCq8z6mkEtthujwCs_HuKdMU_J
-        sync: false  # set manually via dashboard
+        sync: true  # set manually via dashboard
 
