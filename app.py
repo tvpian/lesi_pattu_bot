@@ -6,6 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 from random import choice
 import subprocess
+import yt_dlp
 
 
 
@@ -19,13 +20,17 @@ genius = lyricsgenius.Genius(
 )
 
 def yt_search_title(song):
-    q = urllib.parse.quote_plus(song)
-    lines = subprocess.check_output(
-        ["yt-dlp", f"ytsearch1:{q}", "--print", "%(id)s|%(title)s"],
-        text=True
-    ).strip()
-    vid, title = lines.split("|", 1)
-    return title, f"https://www.youtube.com/watch?v={vid}"
+    query = f"ytsearch1:{song}"
+    ydl_opts = {
+        'quiet': True,
+        'skip_download': True,
+        'format': 'best',
+        'noplaylist': True,
+    }
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        info = ydl.extract_info(query, download=False)
+        video = info['entries'][0]
+        return video['title'], f"https://www.youtube.com/watch?v={video['id']}"
 
 # Detect Malayalam script in input
 def is_malayalam(text):
