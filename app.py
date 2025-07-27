@@ -9,7 +9,7 @@ from random import choice
 app = Flask(__name__)
 
 # Load Genius API key from environment variable
-GENIUS_TOKEN = os.getenv("GENIUS_API_KEY")
+GENIUS_TOKEN = os.getenv("GENIUS_ACCESS_TOKEN")
 genius = lyricsgenius.Genius(
     GENIUS_TOKEN,
     skip_non_songs=True,
