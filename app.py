@@ -23,6 +23,6 @@ def whatsapp_reply():
         resp.message("Sorry, could not find that song.")
     return str(resp)
 
-if __name__ == "__main__":
-    app.run(port=5000)
+#if __name__ == "__main__":
+#    app.run(port=5000)
 
